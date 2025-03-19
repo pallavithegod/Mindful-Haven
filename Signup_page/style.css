@@ -8,8 +8,7 @@
 }
 
 body {
-    background-image: url(img1.jpg);
-    /* background-image: url(img2.jpg); */
+    background-image: url(../Assets/signup_background.jpg);
     background-size: cover;
     background-position:center;
     display: flex;
