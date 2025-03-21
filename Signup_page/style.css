@@ -50,7 +50,7 @@ body {
 
 .container button {
     background:white;
-    color: black;
+    color: white;
     font-size: 12px;
     padding: 10px 45px;
     border: none;
@@ -173,7 +173,7 @@ body {
 
 
 .toggle {
-    background: #956e48;
+    background: #280f03;
     color: #fff;
     position: relative;
     left: -100%;
