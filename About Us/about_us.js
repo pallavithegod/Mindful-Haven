@@ -26,7 +26,7 @@ function initializeCards() {
 
         createParticles();
  initializeCards()
-// Intersection Observer for card animations
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {

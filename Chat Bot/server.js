@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require('cors')
 const {
   GoogleGenerativeAI,
   HarmCategory,
@@ -11,6 +12,9 @@ const app = express();
 const port = 3000;
 
 // Middleware to parse JSON and form data
+app.use(cors({
+  origin: '*'
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

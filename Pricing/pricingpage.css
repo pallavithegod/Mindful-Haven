@@ -1,37 +1,35 @@
 :root {
-  --gradient-bg: linear-gradient(135deg, #ffeeee 0%, rgb(252, 251, 186) 50%, #967653 100%);
-  --card-bg: rgba(26, 26, 46, 0.8);
-  --accent1: #e94560;
-  --accent2: #00b4d8;
-  --accent3: #7209b7;
-  --text: #ffffff;
-  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --gradient-bg: linear-gradient(135deg, #f1e3d3 0%, #f2d0a9 50%, #d88c9a 100%); 
+  --header-bg: #6a5a8c; 
+  --footer-bg: #6a5a8c; 
+  --button-bg: #4a7c74; 
+  --button-hover-bg: #8e7dbe; 
+  --button-text-color: #ffffff; 
+  --button-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); 
+  --card-bg: #ffffff; 
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --text-color: #333333; 
+  --accent-color: black; 
 }
 
-
-body {
-  background: var(--gradient-bg);
-  color: white; 
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh; 
-} 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Header Styles */
+
 header {
-  background-color: #280f03;
+  background-color: var(--header-bg);
   height: 85px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  border-bottom: 2px solid #000; 
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   width: 100%;
 }
 
@@ -40,6 +38,11 @@ header a {
   color: white;
   margin: 0 10px;
   font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header a:hover {
+  color: var(--accent-color); 
 }
 
 header .dev-links {
@@ -47,228 +50,189 @@ header .dev-links {
   gap: 10px;
 }
 
-.main-title{
-  color:#593b1c;
+.main-title {
+  color: var(--header-bg);
   font-weight: bold;
   text-align: center;
   font-size: 20px;
 }
 
-.subheading{
-  color:#7d5c3b;
+.subheading {
+  color: var(--button-bg);
   font-weight: bold;
 }
+
+
 body {
-    font-family: 'Rubik', sans-serif;
-    background-color: #5C7285;
-    color: #171111;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; 
-    background: var(--gradient-bg);
-    font-family: 'Arial', sans-serif;
-  
-  }
+  font-family: 'Rubik', sans-serif;
+  background: var(--gradient-bg);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-  .Pricing {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: relative;
-     
-    align-items: center; 
-    gap: 40px; 
-    width: 100%;
-    padding: 50px 0;
-    
-  }
-  
-  .plan-free{
-    background:#818C78;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    width: 350px;
-    max-width: 90%;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    margin-bottom: 30px; 
-  }
-  
-  
-  .plan-pro {
-  
-    background:  #A7B49E;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    width: 350px;
-    max-width: 90%;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    margin-bottom: 30px; 
-  }
-  
-  
-  .plan h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-  
-  
-  .plan p {
-    font-size: 18px;
-    font-weight: bold;
-    
-    margin-bottom: 15px;
-  }
-  
-  
-  .plan ul {
-    list-style: none;
-    padding: 0;
-    font-size: 16px;
-    text-align: left;
-    margin: 0 auto;
-    max-width: 80%;
-  }
-  
-  .plan ul li {
-    margin: 8px 0;
 
-  }
-  
-  
-  button {
-    background: #ffcc00;
-    border: none;
-    color: black;
-    padding: 12px 25px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 15px;
-    font-size: 16px;
-  }
-  
-  button:hover {
-    background: #ffc107;
-  }
-  
-  
-  .faq {
-    text-align: center;
-    padding: 40px 20px;
-    color: #76502a;
+.Pricing {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  padding: 50px 0;
+}
 
-  }
-  
-  .faq h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
-  }
-  
-  .faq-item details {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    font-weight: bold;
-    margin: 15px auto;
-    width: 90%;
-    border-radius: 8px;
-    color: #956e48;
-  }
-  
-  summary {
-    cursor: pointer;
-    font-weight: bold;
-    padding: 10px;
-    color: #365609;
-    font-size: 16px;
-  }
-  
-  summary:hover {
-    color: #ffc107;
-  }
-  
-  
-  .plan-business{
-    background: #818C78;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    width: 350px;
-    max-width: 90%;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    margin-bottom: 30px; 
-  }
-  
-  .plan-free:hover{
-    border:2px solid  #91ac6c;
-    border-radius: 10px ;
-  
-  }
-  .plan-pro:hover{
-    border:2px solid #956e48;
-    border-radius: 10px ;
-    
-  }
-  .plan-business:hover{
-    border:2px solid #91ac6c ;
-    border-radius: 10px ;
-    
-  }
-  
-  footer {
-    background-color: black;
-    padding: 60px 80px 20px;
-    margin-top: 80px;
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  footer p{
-    color: white;
-  }
-  
-  .footer-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    margin-bottom: 40px;
-  }
-  
-  .footer-section h3 {
-    color: orange;
-    margin-bottom: 20px;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin: 10px 0;
-  }
-  
-  .footer-section a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-section a:hover {
-    color: orange;
-  }
-  
-  
-  .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-  
+.plan-free,
+.plan-pro,
+.plan-business {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-free:hover,
+.plan-pro:hover,
+.plan-business:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.plan h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: var(--header-bg);
+}
+
+.plan p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  font-size: 16px;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.plan ul li {
+  margin: 8px 0;
+  color: var(--text-color);
+}
+
+button {
+  background: var(--button-bg);
+  border: none;
+  color: var(--button-text-color);
+  padding: 12px 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background: var(--button-hover-bg);
+  transform: scale(1.05);
+}
+
+.faq {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--header-bg);
+}
+
+.faq h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.faq-item details {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  font-weight: bold;
+  margin: 15px auto;
+  width: 90%;
+  border-radius: 8px;
+  color: var(--header-bg);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  color: var(--button-bg);
+  font-size: 16px;
+}
+
+summary:hover {
+  color: var(--accent-color);
+}
+
+
+footer {
+  background-color: var(--footer-bg);
+  padding: 60px 80px 20px;
+  margin-top: 80px;
+  width: 100%;
+  text-align: center;
+}
+
+footer p {
+  color: white;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 10px 0;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--accent-color);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}

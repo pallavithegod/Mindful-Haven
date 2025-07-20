@@ -7,137 +7,232 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
     <style>
+        :root {
+            --gradient-bg: linear-gradient(135deg, #f1e3d3 0%, #f2d0a9 50%, #d88c9a 100%); 
+            --header-bg: #6a5a8c; 
+            --footer-bg: #6a5a8c; 
+            --button-bg: #4a7c74; 
+            --button-hover-bg: #8e7dbe; 
+            --button-text-color: #ffffff; 
+            --button-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); 
+            --card-bg: #ffffff; 
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+            --text-color: #333333; 
+            --accent-color: #f2d0a9; 
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #b6f4b6;
-            color: #333;
+            font-family: "Rubik", sans-serif;
+            background: var(--gradient-bg);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
+            line-height: 1.6;
+            animation: gradientAnimation 10s ease infinite;
         }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         header {
-            background-color: #4CAF50;
+            background-color: var(--header-bg);
             color: white;
             text-align: center;
-            padding: 1em;
+            padding: 1.5em;
+            box-shadow: var(--card-shadow);
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
         nav {
-            background: #623b07;
-            padding: 10px;
+            background: var(--header-bg);
+            padding: 1rem;
             text-align: center;
             font-weight: bold;
-           
+            box-shadow: var(--card-shadow);
         }
+
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 40px;
             text-transform: capitalize;
-            font-size: 24px;
+            font-size: 1.25rem;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(242, 208, 169, 0.5);
         }
 
-        .nav #fevicon{
-            text-align: left;
+        h2 {
+            font-size: 2rem;
+            color: var(--header-bg);
+            text-align: center;
+            margin: 1.5rem 0;
         }
 
-        h2{
-            font-size: 30px;
-        }
-        p{
-            font-size: 25px;
+        p {
+            font-size: 1.25rem;
+            text-align: center;
+            margin: 1rem 0;
         }
 
         .container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            padding: 20px;
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+
         .feature {
-            background: rgb(255, 255, 197);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-       
-        #todo-input{
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        #todo-input {
             border-radius: 8px;
             height: 50px;
             padding-left: 0.5rem;
-            border-width: 3px;
-            border-color: #623b07;
+            border: 3px solid var(--header-bg);
+            font-size: 1rem;
+            width: 100%;
+            max-width: 400px;
+            margin: 1rem auto;
+            display: block;
         }
 
         #todo-input::placeholder {
-         color: #26646c;       
+            color: #26646c;
+            opacity: 0.7;
         }
 
         .rainbow {
             background: linear-gradient(to right, red, orange, yellow, green, blue, indigo);
-            color: white;
-            font-weight: bolder;
-            opacity: 0.8;
-        }
-        #join-community{
-            color:#ffffff;
-            background-color:rgb(59, 158, 158);
-            width: 100px;
-            font-size: 17px;
+            color: black;
             font-weight: bold;
+            opacity: 0.8;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 1rem auto;
+            display: inline-block;
+            box-shadow: var(--card-shadow);
+            width: 95%;
+            height: 90%;
+        }
+
+        #join-community {
+            color: var(--button-text-color);
+            background-color: var(--button-bg);
+            width: 150px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: block;
+            margin: 1rem auto;
+        }
+
+        #join-community:hover {
+            background-color: var(--button-hover-bg);
+            transform: scale(1.05);
         }
 
         .premium-tag {
             color: red;
             font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
         }
 
         .tool-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 1rem;
+            padding: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
+
         .tool-grid a {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgb(59, 158, 158);
-            color: #fff;
-            font-weight: bolder;
-            font-size: large;
-            text-align:center;
+            background-color: var(--button-bg);
+            color: var(--button-text-color);
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
             height: 50px;
-            padding: 0.5rem 2rem;
+            padding: 0.5rem 1rem;
             border-radius: 65px;
             text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
-        button{
-            background-color: #856703; /* Red for emphasis */
-            color: #fff;
-            padding: 0.5rem 1rem;
+
+        .tool-grid a:hover {
+            background-color: var(--button-hover-bg);
+            transform: translateY(-3px);
+        }
+
+        button {
+            background-color: var(--button-bg);
+            color: var(--button-text-color);
+            padding: 0.75rem 1.5rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            height: 40px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--button-hover-bg);
+            transform: scale(1.05);
         }
 
         footer {
-            background-color: #654321;
+            background-color: var(--footer-bg);
             color: white;
             text-align: center;
-            padding: 1em;
+            padding: 1.5rem;
             position: relative;
             bottom: 0;
             width: 100%;
+            box-shadow: var(--card-shadow);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
-    
-    
     <nav>
         <a href="../index.html">MindfulHaven</a>
         <a href="#hotline">Emergency Hotline</a>
@@ -146,7 +241,7 @@
     </nav>
 
     <header>
-        <h1>Welcome to Your <EM>PERSONAL SPACE</EM></h1>
+        <h1>Welcome to Your <em>PERSONAL SPACE</em></h1>
     </header>
 
     <main>
@@ -159,7 +254,7 @@
             <section class="feature">
                 <h2>ASMR Music <span class="premium-tag">(Subscribe to Enjoy)</span></h2>
                 <audio controls>
-                    <source src="sample.mp3" type="audio/mpeg" id="audio-btn">
+                    <source src="../Assets/soft-piano-asmr-romantic-whispers-of-love-by-whispering-embrace-301735.mp3" type="audio/mpeg" id="audio-btn">
                 </audio>
             </section>
             <section class="feature">
@@ -172,7 +267,7 @@
             <section class="feature rainbow">
                 <h2>LGBTQ+ Community Space</h2>
                 <p>A safe and supportive environment.</p>
-                <button id="join-community">Join</button>
+                <button id="join-community" onclick = "window.location.href='../Signup_page/signup.html'">Join</button>
             </section>
             <section class="feature">
                 <h2>Wellness Tools</h2>
@@ -180,7 +275,7 @@
                     <a href="#">Music</a>
                     <a href="#">Soothing Games</a>
                     <a href="#">Meditation</a>
-                    </div>
+                </div>
             </section>
             <section class="feature">
                 <h2>Art-Based Therapy <span class="premium-tag">(Subscribe to Enjoy)</span></h2>
@@ -192,17 +287,17 @@
                 <button onclick="window.location.href='tel:+18001234567'">Call Now</button>
             </section>
             <section class="feature" id="chatbot">
-                <h2>Your Personalised SootheSpace</h2>
+                <h2>Your Personalised Mentor</h2>
                 <p>Talk to our AI SOU for mental health support.</p>
                 <iframe src="chatbot.html" width="100%" height="400"></iframe>
             </section>
         </div>
     </main>
-    
+
     <footer>
         <p>Mindful Haven &copy; 2025 - A Safe Space for Mental Wellness</p>
     </footer>
-    
+
     <script>
         document.getElementById("add-task").addEventListener("click", function() {
             let taskInput = document.getElementById("todo-input");

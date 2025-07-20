@@ -1,5 +1,5 @@
 :root {
-    --gradient-bg: linear-gradient(135deg, #ffeeee 0%, rgb(252, 251, 186) 50%, #967653 100%);
+    --gradient-bg: linear-gradient(135deg, #f1e3d3 0%, #f2d0a9 50%, #d88c9a 100%);
     --card-bg: rgba(26, 26, 46, 0.8);
     --accent1: #e94560;
     --accent2: #00b4d8;

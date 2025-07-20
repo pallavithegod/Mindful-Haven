@@ -1,23 +1,35 @@
 :root {
-  --gradient-bg: linear-gradient(135deg, #ffeeee 0%, rgb(252, 251, 186) 50%, #967653 100%);
+  --gradient-bg: linear-gradient(135deg, #f1e3d3 0%, #f2d0a9 50%, #d88c9a 100%); 
+  --header-bg: #6a5a8c; 
+  --footer-bg: #6a5a8c; 
+  --button-bg: #4a7c74; 
+  --button-hover-bg: #8e7dbe; 
+  --button-text-color: #ffffff; 
+  --button-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); 
+  --card-bg: #ffffff; 
+  --card-shadow: 0 15px 15px rgba(0, 0, 0, 0.1); 
+  --text-color: #333333; 
+  --accent-color: #f2d0a9; 
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/*Header Style*/
+
+
 header {
-  background-color: #280f03;
+  background-color: var(--header-bg);
   height: 85px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  border-bottom: 2px solid #000;
-  position: sticky; /* Make the header sticky */
-  top: 0; /* Stick to the top of the viewport */
-  z-index: 1000; /* Ensure the header stays above other content */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header a {
@@ -25,10 +37,12 @@ header a {
   color: white;
   margin: 0 10px;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 header a:hover {
-  text-decoration: underline;}
+  color: var(--accent-color); 
+}
 
 header .dev-links {
   display: flex;
@@ -38,53 +52,67 @@ header .dev-links {
 header .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  color: var(--accent-color); 
 }
 
 header nav {
   display: flex;
   gap: 20px;
 }
+.section-overline{
+  font-family:  "Colonna MT", serif;
+}
 
-/* Body Styles */
 body {
   font-family: "Rubik", sans-serif;
-  background-color: #f3f1d0;
+  background: var(--gradient-bg);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: var(--gradient-bg);
-  color: rgb(21, 16, 16); 
- 
+  color: var(--text-color);
   margin: 0;
   padding: 0;
-  
+  animation: gradientAnimation 10s ease infinite;
 }
-/*Crousel*/
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 .carousel {
   overflow: hidden;
   width: 90%;
   margin: auto;
   border-radius: 20px;
   padding-top: 5px;
-  box-shadow: #284302 0px 5px 15px;
+  box-shadow: var(--card-shadow);
 }
 
 .carousel-track {
   display: flex;
   animation: scroll 20s linear infinite;
-  width: calc(300px * 10); /* Adjust based on the number of slides */
+  width: calc(300px * 10);
 }
 
 .carousel-slide {
-  flex: 0 0 300px; /* Fixed width for each slide */
-  height: 200px; /* Fixed height for all slides */
-  overflow: hidden; /* Ensure images don't overflow */
+  flex: 0 0 300px;
+  height: 200px;
+  overflow: hidden;
 }
 
 .carousel-slide img {
   width: 100%;
-  height: 100%; /* Ensure images fill the container */
-  object-fit: cover; /* Maintain aspect ratio while filling the container */
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes scroll {
@@ -96,11 +124,11 @@ body {
   }
 }
 
-.section-overline{
+.section-overline {
   font-weight: bold;
+  color: var(--header-bg); 
 }
 
-/* Main Content (Grid Container) */
 main {
   flex-grow: 1;
   display: flex;
@@ -121,44 +149,21 @@ main {
   gap: 8px;
   width: 100%;
   height: 60vh;
-  border: 2px solid #000;
+  border: 2px solid rgba(0, 0, 0, 0.1);
   padding: 8px;
   box-sizing: border-box;
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
 }
 
 .parent img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.div1 {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.div2 {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.div3 {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.div4 {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.div5 {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.div8 {
+.div1, .div2, .div3, .div4, .div5, .div8 {
   grid-column: span 2;
   grid-row: span 2;
 }
@@ -169,7 +174,6 @@ main {
   grid-row-start: 1;
 }
 
-/* Goals Section */
 .goals-wrapper {
   width: 100%;
   padding: 20px 0;
@@ -191,9 +195,14 @@ main {
   text-align: center;
   padding: 20px;
   border-radius: 25px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #91ac6c;
-  box-shadow: 3px 3px 3px black;
+  box-shadow: var(--card-shadow);
+  background-color: var(--card-bg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.goal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .goal-image-wrapper img {
@@ -205,16 +214,16 @@ main {
 .goal-title {
   font-size: 1.5rem;
   margin: 15px 0 10px;
-  color: #151313;
+  color: var(--header-bg); 
 }
 
 .goal-text {
   font-size: 1rem;
-  color: #e3dddd;
+  color: var(--text-color);
   line-height: 1.5;
 }
 
-/* Modes Section */
+
 .modes {
   display: flex;
   justify-content: center;
@@ -229,23 +238,23 @@ main {
   align-items: center;
   width: 35%;
   height: 80px;
-  color: #93ed14;
+  color: var(--button-text-color);
   padding: 20px 20px;
-  background-color: #284302;
-  border-radius: 5px;
-  box-shadow: 3px 3px 3px black;
-  transition: background-color 0.3s ease;
+  background-color: var(--button-bg);
+  border-radius: 10px;
+  box-shadow: var(--button-shadow);
+  transition: background-color 0.3s ease, transform 0.3s ease;
   font-size: 40px;
   text-align: center;
-font-weight: bolder;
+  font-weight: bolder;
 }
 
 .modes a:hover {
-  background-color: #7d5c3b;
-  color: white;
+  background-color: var(--button-hover-bg);
+  transform: scale(1.05);
 }
 
-/* Mobile Styles */
+
 @media (max-width: 768px) {
   .goals {
     flex-direction: column;
@@ -259,8 +268,8 @@ font-weight: bolder;
   .modes {
     flex-direction: column;
     gap: 10px;
-    height: 400px;
-    width: 400px;
+    height: auto;
+    width: 100%;
   }
 
   header {
@@ -274,23 +283,26 @@ font-weight: bolder;
     gap: 10px;
   }
 }
-.section-overline{
+
+.section-overline {
   text-align: center;
   font-size: 40px;
 }
-.section-title{
+
+.section-title {
   text-align: center;
   font-size: 27px;
   font-style: italic;
   padding-left: 4.5rem;
   padding-right: 4.5rem;
+  color: var(--button-bg); 
 }
 
-/* Footer Styles */
+
 footer {
-  background-color: #280f03;
+  background-color: var(--footer-bg);
   padding: 20px;
-  border-top: 2px solid #000;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
@@ -306,6 +318,7 @@ footer {
 
 .footer-section h3 {
   margin-bottom: 10px;
+  color: var(--accent-color); 
 }
 
 .footer-section ul {
@@ -336,6 +349,7 @@ footer {
   text-decoration: none;
   color: #ffffff;
 }
-.footer-content{
+
+.footer-content {
   color: #ffffff;
 }
