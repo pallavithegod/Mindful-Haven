@@ -2,7 +2,7 @@
 
 A mental wellness platform offering AI-powered emotional support, productivity tools, and safe community spaces.
 
-<!-- Add a screenshot  -->
+<!-- Add  screenshots  -->
 
 ## Features ✨
 
@@ -51,5 +51,6 @@ A mental wellness platform offering AI-powered emotional support, productivity t
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/mindful-haven.git
+   git clone https://github.com/pallavithegod/Mindful-Haven.git
    cd mindful-haven
+   npm install
